@@ -1,0 +1,86 @@
+# Terkwaz POC : Automation testing project to test Terkwaz Requirement
+
+### What is this repository for?
+
+- Quick summary
+  This test automation program is intended to cover all Scenarios required by Terkwaz as an assignment.
+
+### features:
+
+- **Automation tool** : Selenium webdriver.
+- **Scripting language** : Java.
+- **Scripting IDE** : Eclipse.
+- **Testing Framework** : 
+ -  * TestNg for reporting and has a lot of annotations used to organize tests please check https://testng.org/doc/ for more details. 
+-   * Maven for  for projects build, dependency and documentation please check https://maven.apache.org/guides/index.html for more details.
+- **Reporting** : TestNg.ALLure report 
+- **Source Control**: Git with GitHub.
+- **Supported Browsers** : default chrome but other browsers are also supported by changing the browser name to firefox OR ie from 'suite.xml' file.
+
+
+### How do I get set up?
+
+### For mac ###
+- Install Eclipse
+- Install Maven from https://maven.apache.org/download.cgi
+- Install the Java 8 jdk from java
+- Install git
+- In Eclipse, download TestNG plugin by: Go to Help -> Eclipse Marketplace, Type the text TestNG in Find text box > Click Go button, Click Install button at "TestNG for Eclipse" area, Follow prompts.
+- To Run Allure report use (allure serve allure-results) in the terminal
+
+### How to get project for the first time:
+
+  - git clone https://github.com/engdgad/Terkwaz-Selenium-Framework.git
+  - Import the project as an existing maven project 
+  - run this on project :  mvn clean install 
+  
+### How to Add Tests
+1- Add the page under src/main/java/pages
+2- Make sure that the newly added page extends the PageBase
+3- Add the elements locators of the page and function for each (if needed)
+4- Add the test under src/test/java/tests
+5- Make sure that the newly added test extends the TestBase
+6- Call the needed functions from the created page (in step1)
+7- Add the test to suite.xml
+
+### How to run tests:
+- From the project select suite.xml file.
+- Right click on testng.xml file > select run as TestNg Suite
+- And this will run all feature files 
+
+
+
+### Main Concepts
+
+- I'm using page object model design pattern so you should keep the tests and element locators separately. This will keep the code clean and easy to understand and maintain. The Page Object approach makes automation framework in a testing programmer friendly, more durable and comprehensive.
+- I Follow the [Git model]
+- DataDriven is implemented in Selenium Search TC
+- API Response is added to Allure report.
+- A screen shot is added per fail.
+
+
+
+### Code architecture
+
+Framework's layers should be close to the following diagram:
+
+```
+				===========================
+				|        Suites.xml    |
+				===========================
+					|                    |
+			=====================================
+			              | Tests |
+			=====================================
+					|
+				===============================
+				|            pages          |
+				===============================
+
+
+### Test Scope
+
+The scope of testing here is having a full coverage for the manual scenarios written below 
+1-In "https://www.google.com/ncr" Search for "selenium webdriver" & heck that the third result text contains "What is Selenium WebDriver?"
+2-In "https://the-internet.herokuapp.com/" , Try to upload file and ensure that the file is uploaded successfully
+3-In "https://the-internet.herokuapp.com/" , Click on start and wait for Hello world! message to appear 
